@@ -31,7 +31,7 @@ JENKINS_HOME=<%= scope.lookupvar('jenkins::params::jenkins_home') %>
 RUN_STANDALONE=true
 
 # log location.  this may be a syslog facility.priority
-JENKINS_LOG=/var/log/jenkins/$NAME.log
+JENKINS_LOG=<%= scope.lookupvar('jenkins::params::jenkins_logs_dir') %>/$NAME.log
 
 # OS LIMITS SETUP
 #   comment this out to observe /etc/security/limits.conf
@@ -49,7 +49,7 @@ AJP_PORT=<%= scope.lookupvar('jenkins::ajp_port') %>
 # arguments to pass to jenkins.
 # --javahome=$JAVA_HOME
 # --httpPort=$HTTP_PORT (default 8080; disable with -1)
-# --httpsPort=$HTTP_PORT
+# --httpsPort=$HTTPS_PORT
 # --ajp13Port=$AJP_PORT
 # --argumentsRealm.passwd.$ADMIN_USER=[password]
 # --argumentsRealm.$ADMIN_USER=admin
