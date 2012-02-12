@@ -22,6 +22,7 @@ class jenkins::config {
     file { ["${jenkins::params::jenkins_home}","${jenkins::params::jenkins_logs_dir}"]:
         ensure => directory,
         owner  => $jenkins::params::jenkins_user,
+        group  => $jenkins::params::jenkins_user,
         mode   => 0644,
         require => Class["jenkins::install"],
         notify => Class["jenkins::service"],
