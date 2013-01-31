@@ -53,7 +53,7 @@
 #   }
 #
 ################################################################################
-class jenkins ( $ensure = present, $java_args = ["-Xmx256m"], $http_port = "8080", $ajp_port = "-1", $jenkins_home = "", $jenkins_logs_dir = "" ) {
+class jenkins ( $ensure = present, $java_args = ["-Xmx256m"], $http_port = "8080", $ajp_port = "-1", $jenkins_home = "", $jenkins_logs_dir = "", $stable_repo = false ) {
 
     include repo
     include jenkins::params, jenkins::install, jenkins::config, jenkins::service
