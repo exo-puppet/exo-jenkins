@@ -52,6 +52,6 @@ AJP_PORT=<%= scope.lookupvar('jenkins::ajp_port') %>
 # --httpsPort=$HTTPS_PORT
 # --ajp13Port=$AJP_PORT
 # --argumentsRealm.passwd.$ADMIN_USER=[password]
-# --argumentsRealm.$ADMIN_USER=admin
+# --argumentsRealm.roles.$ADMIN_USER=admin
 # --webroot=~/.jenkins/war
 JENKINS_ARGS="--webroot=/var/cache/jenkins/war --httpPort=$HTTP_PORT --ajp13Port=$AJP_PORT"
