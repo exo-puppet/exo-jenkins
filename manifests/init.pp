@@ -14,6 +14,11 @@
 #
 #       this variable allows to choose if jenkins must be present and which version (values : "present", "latest", a version)
 #
+#   [+java_bin+]
+#       (OPTIONAL) (default: /usr/bin/java)
+#
+#       this variable allows to choose java binary used to launch Jenkins
+#
 #   [+java_args+]
 #       (OPTIONAL) (default: ["-Xmx256m"])
 #
@@ -55,6 +60,7 @@
 ################################################################################
 class jenkins (
   $ensure           = present,
+	$java_bin         = '/usr/bin/java',
   $java_args        = [
     '-Xmx256m'],
   $http_port        = '8080',
