@@ -68,6 +68,7 @@ class jenkins (
   $jenkins_home     = '',
   $jenkins_logs_dir = '',
   $stable_repo      = false) {
-  include repo
+  include stdlib
+  include apt
   include jenkins::params, jenkins::install, jenkins::config, jenkins::service
 }
